@@ -77,5 +77,32 @@ public class CarDealership {
         }
     }
 
+//    Create a method called findCarByManufactuere
+//    Input is string - ManufactuereName
+//    Return First car with manufactureer name
+
+    public Car findCarByManufacturer(String manufacturerName){
+
+        //Loop through all cars
+
+        for (Car car : this.cars) {
+//            System.out.println(car);
+            // Get the car manufacturer
+            try {
+
+                if(car.getManufacturer().name().toLowerCase().equals(manufacturerName.toLowerCase())){
+                    return car;
+                }
+            }catch (Exception e){
+                System.out.println("No Car");
+            }
+
+        }
+
+        //Return a
+        return null;
+
+    }
+
 
 }
