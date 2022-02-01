@@ -1,4 +1,4 @@
-package com.mfin.javaExercises.week2.day5.classes;
+package com.mfin.javaExercises.week2.day5.classes.car_dealership_ex_service;
 
 public class CarDealershipServices {
     // This class performs all business logic for the following:
