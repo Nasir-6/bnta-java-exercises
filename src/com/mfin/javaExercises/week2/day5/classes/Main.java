@@ -22,7 +22,8 @@ public class Main {
         }
         System.out.println(nasCar);
 
-        System.out.println(nasCar.findCarByManufacturer("bmw"));
+        Car result = nasCar.findCarByManufacturer("bmw");
+        System.out.println(result);
 
 
     }

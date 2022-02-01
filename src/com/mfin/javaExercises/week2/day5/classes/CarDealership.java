@@ -99,7 +99,7 @@ public class CarDealership {
 
         }
 
-        //Return a
+        //Return null if nothing found
         return null;
 
     }
