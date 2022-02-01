@@ -4,29 +4,66 @@ public class CarDealershipServices {
     // This class performs all business logic for the following:
     // 1. add cars
     // 2. how many cars in the garage
+    // 3. Find First car with named manufacturer
 
-    public void addCar(CarDealership carDealership, Car car) {
-        // check if open
-        // if open check not full
-        // then add car to garage
-        // if full throw exception
-        // if not open throw exception
-//        if (garage.isOpen()) {
-//            int currentCarsInGarageCount = getTotalNumberOfCarsInGarage(garage);
-//            if (currentCarsInGarageCount < garage.getCapacity()) {
-//                for (int i = 0; i < garage.getCars().length; i++) {
-//                    if (garage.getCars()[i] == null) {
-//                        garage.getCars()[i] = car;
-//                        break;
-//                    }
-//                }
-//            } else {
-//                throw new IllegalStateException(garage.getGarageNumber() + " is full. Sorry :(");
-//            }
-//        } else {
-//            throw new IllegalStateException(garage.getGarageNumber() + " is closed. Please open before adding your car");
-//        }
+    public int countCars(CarDealership carDealership){
+        // have counter
+        int numOfCars = 0;
+        // Loop through number whole dealership array, and count
+        for (int i = 0; i < carDealership.getCapacity(); i++) {
+            //If not empty increase number
+            if (carDealership.getCars()[i] != null) {
+                numOfCars += 1;
+            }
+        }
+        return numOfCars;
     }
+
+
+    public void addCar(CarDealership carDealership, Car newCar){
+        // Loop through our cars array
+
+        // copy carDealership array (so can setCars and not use getCars to set!)
+        Car[] dealershipCarsCopy = carDealership.getCars();
+        for (int i = 0; i < carDealership.getCapacity(); i++) {
+            // Check if there is already a car in that space
+            if (carDealership.getCars()[i] == null){
+                // If not, put our new car in that slot
+                dealershipCarsCopy[i] = newCar;
+                // Once we have placed our new car we can stop the loop
+                break;
+            }
+        }
+        carDealership.setCars(dealershipCarsCopy);
+    }
+
+
+    //    Create a method called findCarByManufactuere
+//    Input is string - ManufactuereName
+//    Return First car with manufactureer name
+
+    public Car findCarByManufacturer(CarDealership carDealership, String manufacturerName){
+
+        //Loop through all cars
+
+        for (Car car : carDealership.getCars()) {
+            //System.out.println(car);
+            // Get the car manufacturer
+            if (car != null){
+                if (manufacturerName.toLowerCase().equals(car.getManufacturer().name().toLowerCase())) {
+                    return car;
+
+                }
+            }
+        }
+        //Return null if nothing found
+        return null;
+
+    }
+
+
+
+
 
 
 }

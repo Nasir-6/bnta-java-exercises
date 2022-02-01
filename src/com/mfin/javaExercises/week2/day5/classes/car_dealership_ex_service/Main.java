@@ -12,18 +12,24 @@ public class Main {
 
         System.out.println(cars[1]);
 
-
-
         CarDealership nasCar = new CarDealership("NasCar", 5);
+        CarDealershipServices nasCarServices = new CarDealershipServices();
 
-        System.out.println(nasCar.countNumberOfCars());
+        System.out.println(nasCarServices.countCars(nasCar));
         for (Car car : cars) {
-            nasCar.addCar(car);
+            nasCarServices.addCar(nasCar, car);
         }
         System.out.println(nasCar);
 
-        Car result = nasCar.findCarByManufacturer("bmw");
-        System.out.println(result);
+        String manufacturerName = "bmw";
+        Car result = nasCarServices.findCarByManufacturer(nasCar,manufacturerName);
+
+        if (result == null){
+            System.out.println("There is No Car from \"" + manufacturerName + "\" inside the NasCar Dealership");
+        } else {
+            System.out.println("Here's the first car from the manufacturer " + manufacturerName.toUpperCase() + ":");
+            System.out.println(result);
+        }
 
 
     }
