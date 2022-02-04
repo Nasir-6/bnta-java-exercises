@@ -23,17 +23,23 @@ public class CarDealershipServices {
     public void addCar(CarDealership carDealership, Car newCar){
         // Loop through our cars array
 
-        // copy carDealership array (so can setCars and not use getCars to set!)
+        // copy carDealership array (so can setCars and not use getCars to set!) - ignore if using getCars
         Car[] dealershipCarsCopy = carDealership.getCars();
+
         for (int i = 0; i < carDealership.getCapacity(); i++) {
             // Check if there is already a car in that space
             if (carDealership.getCars()[i] == null){
                 // If not, put our new car in that slot
+                // Could set using getCars - This is for Marcy
+                carDealership.getCars()[i] = newCar;
+
+                // Ignore this copy
                 dealershipCarsCopy[i] = newCar;
                 // Once we have placed our new car we can stop the loop
                 break;
             }
         }
+        // Ignore if using getcars
         carDealership.setCars(dealershipCarsCopy);
     }
 
@@ -52,9 +58,9 @@ public class CarDealershipServices {
             if (car != null){
                 if (manufacturerName.toLowerCase().equals(car.getManufacturer().name().toLowerCase())) {
                     return car;
-
                 }
             }
+
         }
         //Return null if nothing found
         return null;

@@ -1,4 +1,6 @@
-package com.mfin.javaExercises.week2.day5.classes.car_dealership_ex;
+package com.mfin.javaExercises.week2.day5.classes.car_dealership_ex_repeat.car_dealership_ex;
+
+import java.util.Objects;
 
 public class Car {
     //Properties
@@ -41,6 +43,7 @@ public class Car {
         this.price = price;
     }
 
+
     @Override
     public String toString() {
         return "Car{" +
@@ -48,5 +51,18 @@ public class Car {
                 ", manufacturer=" + manufacturer +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(car.price, price) == 0 && engineType == car.engineType && manufacturer == car.manufacturer;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(engineType, manufacturer, price);
     }
 }

@@ -14,6 +14,7 @@ public class CarDealership {
         this.cars = new Car[capacity];
     }
 
+
     public String getDealershipName() {
         return dealershipName;
     }
@@ -46,6 +47,7 @@ public class CarDealership {
                 ", cars=" + Arrays.toString(cars) +
                 '}';
     }
+
 
 
 }

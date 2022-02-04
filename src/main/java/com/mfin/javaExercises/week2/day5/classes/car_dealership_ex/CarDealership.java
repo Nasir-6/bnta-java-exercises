@@ -54,8 +54,15 @@ public class CarDealership {
         // Loop through number whole dealership array, and count
         for (int i = 0; i < this.capacity; i++) {
             //If not empty increase number
+            System.out.println(i + "th position in array");
+            System.out.println("Num of cars found: " + numOfCars);
+
+
             if (this.cars[i] != null) {
-                numOfCars += 1;
+                //New = old + 1
+                numOfCars = numOfCars + 1;
+                System.out.println("Found a car");
+                System.out.println(numOfCars);
             }
         }
         return numOfCars;
