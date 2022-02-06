@@ -7,17 +7,26 @@ import java.util.Scanner;
 
 public class FileScanner {
 
-    public static void main(String[] args) throws IOException {
-
-        File temp = new File("src/com/mfin/javaExercises/week2/day3/scanners/input.txt");
-        // NOTE: make sure to give path name starting from the project directory all the way to the location of the txt file!!!
-//        System.out.println(temp.getAbsolutePath());
-        Scanner file = new Scanner(temp);
+    public static void main(String[] args) {
 
 
-        while(file.hasNext()) {
-            System.out.println(file.nextLine());
+        try{
+//            src/main/java/com/mfin/javaExercises/week2/day3/scanners/input.txt
+            File file = new File("src/main/java/com/mfin/javaExercises/week2/day3/scanners/input.txt");
+            //            // NOTE: make sure to give path name starting from the project directory all the way to the location of the txt scanner!!!
+            Scanner scanner = new Scanner(file);
+
+//            System.out.println(scanner.nextLine());
+//            System.out.println(scanner.nextLine());
+//            System.out.println(scanner.nextLine());
+            while(scanner.hasNext()) {
+                //While it has a next line, print it out
+                System.out.println(scanner.nextLine());
+            }
+        } catch (IOException e){
+            System.out.println("File Not Found");
         }
+
 
 
 
