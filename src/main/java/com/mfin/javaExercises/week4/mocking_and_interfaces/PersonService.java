@@ -48,7 +48,7 @@ public class PersonService {
                 .findFirst();
     }
 
-    private boolean doesPersonWithIdExists(Integer id) {
+    boolean doesPersonWithIdExists(Integer id) {
         return personDAO
                 .getPeople()
                 .stream()
