@@ -44,14 +44,6 @@ public class Car {
     }
 
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "engineType=" + engineType +
-                ", manufacturer=" + manufacturer +
-                ", price=" + price +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {

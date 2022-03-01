@@ -11,6 +11,9 @@ public class PersonService {
     }
 
     public void savePerson(Person person) {
+        //
+
+
         if (person.getAge() == null ||
                 person.getId() == null ||
                 person.getName().length() == 0) {
@@ -29,9 +32,11 @@ public class PersonService {
 
     public void deletePerson(int id) {
         boolean exists = doesPersonWithIdExists(id);
+        id = 25;
         if (!exists) {
             throw new IllegalStateException("person with id " + id + " not found");
         }
+
         personDAO.deletePerson(id);
     }
 
@@ -53,6 +58,7 @@ public class PersonService {
                 .getPeople()
                 .stream()
                 .anyMatch(p -> p.getId().equals(id));
+        // MOCK getPeople
     }
 }
 

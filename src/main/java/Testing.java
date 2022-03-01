@@ -11,7 +11,10 @@ public class Testing {
     // create a method
     public static void main(String[] args) {
 
-        compareValue(3, 2);
+        Integer num = 0;
+        System.out.println(num);
+
+//        compareValue(3, 2);
     }
 
     static void compareValue(int num1, int num2){

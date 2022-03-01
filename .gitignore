@@ -9,6 +9,21 @@
 *.nar
 hs_err_pid*
 
+### Java template
+# Compiled class file
+# Log file
+*.log
+# BlueJ files
+*.ctxt
+# Package Files #
+*.zip
+*.tar.gz
+*.rar
+
+
+
+
+
 ##############################
 ## Maven
 ##############################

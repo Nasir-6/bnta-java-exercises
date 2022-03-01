@@ -14,25 +14,53 @@ public class Main {
 
         // HashMap<Key, Value>
         // HashMap<KeyType, ValueType>
-        HashMap<String, Integer> returnedCountMap = dataStrucAndAlgo.countOccurrences(input);
+        HashMap<String, Integer> myHashMap = new HashMap<>();
+        myHashMap.put("a",5);
+        myHashMap.put("b",2);
+        System.out.println(myHashMap);
+        System.out.println(myHashMap.get("a"));
+        System.out.println(myHashMap.get("Two"));
+
+        HashMap<String, Integer> mySecondHashMap = new HashMap<>();
+        mySecondHashMap.put("a",5);
+        mySecondHashMap.put("b",3);
+
+        System.out.println(myHashMap.get("a").equals(mySecondHashMap.get("a")));
+        System.out.println(myHashMap.get("b").equals(mySecondHashMap.get("b")));
+
+        System.out.println(myHashMap.keySet());
+        for (String key : myHashMap.keySet()) {
+            System.out.println(key);
+            System.out.println(myHashMap.get(key));
+        }
 
 
-        System.out.println(returnedCountMap.keySet());
 
 
-        dataStrucAndAlgo.displayHashMap(returnedCountMap);
+
+
+
+        // HashMap<Key, Value>
+        // HashMap<KeyType, ValueType>
+//        HashMap<String, Integer> returnedCountMap = dataStrucAndAlgo.countOccurrences(input);
+
+
+//        System.out.println(returnedCountMap.keySet());
+
+
+//        dataStrucAndAlgo.displayHashMap(returnedCountMap);
 
 
         // Now lets find max occurance
-        dataStrucAndAlgo.getMaxOccurance(returnedCountMap);
+//        dataStrucAndAlgo.getMaxOccurance(returnedCountMap);
 
 
 
 
         //        //Parenthesis Checker
 //        // Take input String
-        String brackets = "[{{[(){}]}}[}]{}{{(())}]"; //}{
-        dataStrucAndAlgo.isBalanced(brackets);
+//        String brackets = "[{{[(){}]}}[}]{}{{(())}]"; //}{
+//        dataStrucAndAlgo.isBalanced(brackets);
 
 
 
